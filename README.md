@@ -47,7 +47,7 @@ Node CPU evaluation and browser WASM verification are separate. See [VERIFICATIO
 
 ## Scope
 
-Up to 40 written memories, 8,000 characters per story, 600 KB per imported JSON archive. Local JSON import/export; no audio recording, transcription, photo recognition, PDF/Office extraction, cloud sync, encryption, genealogy verification, generated biographies or automatic relationship inference. Device/browser resources can prevent loading; the original stories remain usable without search.
+Up to 40 written memories, 8,000 characters per story, 80 shelf passages and 1.5 MB per imported JSON archive. Local JSON import/export; no audio recording, transcription, photo recognition, PDF/Office extraction, cloud sync, encryption, genealogy verification, generated biographies or automatic relationship inference. Device/browser resources can prevent loading; the original stories remain usable without search.
 
 ## Develop and reproduce
 

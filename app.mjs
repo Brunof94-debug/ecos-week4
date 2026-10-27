@@ -184,7 +184,7 @@ $('#import-button').onclick=()=>$('#import-file').click();
 $('#import-file').onchange=async event=>{
   const file=event.target.files[0];if(!file)return;
   try{
-    if(file.size>LIMITS.archiveBytes)throw new Error('Archive exceeds 600 KB.');
+    if(file.size>LIMITS.archiveBytes)throw new Error('Archive exceeds 1.5 MB.');
     const input=JSON.parse(await file.text());const records=validateArchive(input);
     for(const memory of records){const supplied=input.memories.find(m=>m.id===memory.id)?.sha256;if(supplied){const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(memory.text)))).map(x=>x.toString(16).padStart(2,'0')).join('');if(digest!==supplied)throw new Error('A story does not match its stored SHA-256.');}}
     if(memories.length&&!await confirmAction(t('openTitle'),t('openMessage')))return;
