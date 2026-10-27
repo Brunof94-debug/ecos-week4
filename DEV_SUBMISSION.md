@@ -18,7 +18,7 @@ For **Ghost in the Machine**, I chose the remembrance side of the theme. The “
 
 The public collection is **entirely fictional**: eight short Duarte-family memories, including a repaired coat, a birthday power cut, a recipe measured by touch and an undated letter. These are not my family records or interviews with real people.
 
-![The Ecos archive, with a warm paper palette and an original still-life illustration](https://raw.githubusercontent.com/Brunof94-debug/ecos-week4/main/evidence/ecos-home.png)
+![The Ecos archive, with a warm paper palette and an original still-life illustration](https://raw.githubusercontent.com/Brunof94-debug/ecos-week4/7a585b9d9555a6b0bd54f44a6b375146c0bc7f65/evidence/ecos-home.png)
 
 ## Demo
 
@@ -32,7 +32,7 @@ You can read the fictional collection immediately. To try the open model:
 4. Choose **Keep this passage**, then open the **Remembrance shelf** and download a plain-text keepsake.
 5. Compare the two **first river crossing** accounts. Clara says 1987; Rui says 1989. Both remain visible. The letter with no date stays undated.
 
-![A real local-model retrieval result, linked to the original birthday memory](https://raw.githubusercontent.com/Brunof94-debug/ecos-week4/main/evidence/ecos-search.png)
+![A real local-model retrieval result, linked to the original birthday memory](https://raw.githubusercontent.com/Brunof94-debug/ecos-week4/7a585b9d9555a6b0bd54f44a6b375146c0bc7f65/evidence/ecos-search.png)
 
 You can also add your own written memory, download a portable JSON archive, reopen it later, or explicitly save an unencrypted copy in this browser. The interface never silently saves your stories to an account.
 
@@ -85,7 +85,7 @@ Offline operation is conditional: the user must cache the app, finish the model 
 
 The decisive example is the disagreement about the boat trip. Ecos could have produced one confident sentence. Instead, it shows two accounts with two names and two years.
 
-![Original source text, including the narrator’s uncertainty](https://raw.githubusercontent.com/Brunof94-debug/ecos-week4/main/evidence/ecos-source.png)
+![Original source text, including the narrator’s uncertainty](https://raw.githubusercontent.com/Brunof94-debug/ecos-week4/7a585b9d9555a6b0bd54f44a6b375146c0bc7f65/evidence/ecos-source.png)
 
 That leaves the archive a little less neat. It also leaves more of the people in it.
 
