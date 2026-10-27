@@ -1,6 +1,6 @@
 ---
 title: "Ecos: A Memory Can Be Incomplete and Still Be Worth Keeping"
-published: false
+published: true
 tags: devchallenge, hf26challenge, opensource, webdev
 ---
 

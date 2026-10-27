@@ -4,6 +4,8 @@ A new project for **DEV Hacktoberfest 2026 Week 4 — Ghost in the Machine**, st
 
 **Demo:** https://brunof94-debug.github.io/ecos-week4/
 
+**Published Week 4 entry:** https://dev.to/brunof94_debug/ecos-a-memory-can-be-incomplete-and-still-be-worth-keeping-4cdg . Published October 26, 2026 in Brasília time, after the user's authorization of the Week 4 rules. The public article API and the official `hf26challenge` latest feed were checked. Publication is not a judging result or a guarantee of eligibility/prize.
+
 ## Try the fictional collection
 
 1. Browse eight fictional Duarte-family memories. No account or model download is needed to read them.

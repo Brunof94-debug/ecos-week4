@@ -1,5 +1,5 @@
 {
-  "observedAt": "2026-10-27 02:00:31 UTC",
+  "observedAt": "2026-10-27 02:45:15 UTC",
   "repository": "https://github.com/Brunof94-debug/ecos-week4",
   "demo": "https://brunof94-debug.github.io/ecos-week4/",
   "demoStatus": "live; HTTP 200 and actual browser model search verified",
@@ -9,10 +9,13 @@
     "conclusion": "success"
   },
   "dev": {
-    "articleId": 7718487,
+    "articleId": 4924998,
     "account": "brunof94_debug",
-    "status": "unpublished draft awaiting user's Week 4 rules authorization",
-    "screenshotsLoaded": 3
+    "status": "published; public API and official hf26challenge latest feed verified",
+    "screenshotsLoaded": 3,
+    "url": "https://dev.to/brunof94_debug/ecos-a-memory-can-be-incomplete-and-still-be-worth-keeping-4cdg",
+    "publishedAt": "2026-10-27T02:41:19Z",
+    "rulesAuthorization": "Explicit user approval received immediately before publication."
   },
   "contest": "DEV Hacktoberfest Week 4 — Ghost in the Machine"
 }
