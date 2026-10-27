@@ -1,0 +1,506 @@
+{
+  "runAt": "2026-10-27T01:26:00.886Z",
+  "model": {
+    "id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2",
+    "revision": "2c4055b12046f11709e9df2c122e59ffbdc2f900",
+    "dtype": "q8",
+    "dimensions": 384
+  },
+  "runtime": "Node.js ONNX Runtime CPU; browser WASM checked separately",
+  "memoryCount": 8,
+  "passageCount": 24,
+  "threshold": 0.3,
+  "elapsedMs": 5759,
+  "method": "Twelve authored EN/PT queries against eight authored fictional memories. Body-only embeddings; expected labels never enter model input. Stopword-filtered exact-token overlap baseline. Hit@3 counts at least one expected memory among distinct retrieved IDs. These queries are illustrative, not held-out or representative.",
+  "summary": {
+    "queries": 12,
+    "semanticHit1": 10,
+    "semanticHit3": 10,
+    "lexicalHit1": 1,
+    "lexicalHit3": 2,
+    "outOfScopeAbstentions": 2,
+    "outOfScopeQueries": 3
+  },
+  "results": [
+    {
+      "query": "Who gave broken clothes a second life?",
+      "relevant": [
+        "m01"
+      ],
+      "semanticTop3": [
+        "m01",
+        "m02"
+      ],
+      "lexicalTop3": [
+        "m04",
+        "m05"
+      ],
+      "semanticHit1": true,
+      "semanticHit3": true,
+      "lexicalHit1": false,
+      "lexicalHit3": false,
+      "topSimilarity": 0.3693450774700255,
+      "topCitations": [
+        {
+          "memoryId": "m01",
+          "line": 1,
+          "start": 0,
+          "end": 163,
+          "text": "Grandma Nair kept a tin of buttons under her chair. When the sleeve of my yellow coat tore, she turned the cuff inside out and stitched a patch shaped like a leaf.",
+          "similarity": 0.369345
+        },
+        {
+          "memoryId": "m01",
+          "line": 2,
+          "start": 164,
+          "end": 300,
+          "text": "She never threw a garment away while the cloth could still hold a needle. I wore that coat until the sleeves stopped reaching my wrists.",
+          "similarity": 0.347979
+        },
+        {
+          "memoryId": "m02",
+          "line": 2,
+          "start": 134,
+          "end": 251,
+          "text": "He replaced a loose wire and made music come out of it again. For weeks he whistled along while he washed the dishes.",
+          "similarity": 0.312334
+        }
+      ]
+    },
+    {
+      "query": "Who made damaged electronics work again?",
+      "relevant": [
+        "m02"
+      ],
+      "semanticTop3": [
+        "m02",
+        "m01"
+      ],
+      "lexicalTop3": [
+        "m02",
+        "m07"
+      ],
+      "semanticHit1": true,
+      "semanticHit3": true,
+      "lexicalHit1": true,
+      "lexicalHit3": true,
+      "topSimilarity": 0.3755076251004691,
+      "topCitations": [
+        {
+          "memoryId": "m02",
+          "line": 2,
+          "start": 134,
+          "end": 251,
+          "text": "He replaced a loose wire and made music come out of it again. For weeks he whistled along while he washed the dishes.",
+          "similarity": 0.375508
+        },
+        {
+          "memoryId": "m02",
+          "line": 1,
+          "start": 0,
+          "end": 133,
+          "text": "In 1974, Dad carried his little wooden radio from the repair shop into our kitchen. One corner was burnt and the dial had no numbers.",
+          "similarity": 0.371283
+        },
+        {
+          "memoryId": "m01",
+          "line": 1,
+          "start": 0,
+          "end": 163,
+          "text": "Grandma Nair kept a tin of buttons under her chair. When the sleeve of my yellow coat tore, she turned the cuff inside out and stitched a patch shaped like a leaf.",
+          "similarity": 0.306025
+        }
+      ]
+    },
+    {
+      "query": "A celebration without electric lights",
+      "relevant": [
+        "m03"
+      ],
+      "semanticTop3": [
+        "m03"
+      ],
+      "lexicalTop3": [],
+      "semanticHit1": true,
+      "semanticHit3": true,
+      "lexicalHit1": false,
+      "lexicalHit3": false,
+      "topSimilarity": 0.5105664197199354,
+      "topCitations": [
+        {
+          "memoryId": "m03",
+          "line": 1,
+          "start": 0,
+          "end": 133,
+          "text": "The electricity failed during my birthday supper in 1985. Our neighbours brought candles and we carried the table into the courtyard.",
+          "similarity": 0.510566
+        },
+        {
+          "memoryId": "m03",
+          "line": 3,
+          "start": 268,
+          "end": 370,
+          "text": "For years afterwards I asked for the same birthday supper, but the candles never felt quite as bright.",
+          "similarity": 0.406556
+        },
+        {
+          "memoryId": "m03",
+          "line": 2,
+          "start": 134,
+          "end": 267,
+          "text": "Someone beat a spoon against a glass and everybody sang. The cake had collapsed in the oven, so we ate warm batter from little bowls.",
+          "similarity": 0.333234
+        }
+      ]
+    },
+    {
+      "query": "Learning to bake by touch instead of precise measurements",
+      "relevant": [
+        "m04"
+      ],
+      "semanticTop3": [
+        "m04",
+        "m03"
+      ],
+      "lexicalTop3": [],
+      "semanticHit1": true,
+      "semanticHit3": true,
+      "lexicalHit1": false,
+      "lexicalHit3": false,
+      "topSimilarity": 0.4820533149969267,
+      "topCitations": [
+        {
+          "memoryId": "m04",
+          "line": 1,
+          "start": 0,
+          "end": 146,
+          "text": "Before the neighbourhood festival in 1988, four of us squeezed around Nair’s stove to make bread. She measured everything with a chipped blue cup.",
+          "similarity": 0.482053
+        },
+        {
+          "memoryId": "m03",
+          "line": 2,
+          "start": 134,
+          "end": 267,
+          "text": "Someone beat a spoon against a glass and everybody sang. The cake had collapsed in the oven, so we ate warm batter from little bowls.",
+          "similarity": 0.314824
+        },
+        {
+          "memoryId": "m04",
+          "line": 2,
+          "start": 147,
+          "end": 273,
+          "text": "We argued about how much flour she meant. She laughed, pressed my hand into the dough and said it should feel like an earlobe.",
+          "similarity": 0.302745
+        }
+      ]
+    },
+    {
+      "query": "Leaving home for a different place",
+      "relevant": [
+        "m05"
+      ],
+      "semanticTop3": [
+        "m05"
+      ],
+      "lexicalTop3": [],
+      "semanticHit1": true,
+      "semanticHit3": true,
+      "lexicalHit1": false,
+      "lexicalHit3": false,
+      "topSimilarity": 0.4178104767011496,
+      "topCitations": [
+        {
+          "memoryId": "m05",
+          "line": 1,
+          "start": 0,
+          "end": 141,
+          "text": "We left the small town carrying two suitcases and a basket of oranges. Mum gave the window seat to my sister because she felt sick on trains.",
+          "similarity": 0.41781
+        }
+      ]
+    },
+    {
+      "query": "A boat trip remembered in two different years",
+      "relevant": [
+        "m06",
+        "m07"
+      ],
+      "semanticTop3": [
+        "m07",
+        "m06",
+        "m01"
+      ],
+      "lexicalTop3": [
+        "m03",
+        "m05",
+        "m06"
+      ],
+      "semanticHit1": true,
+      "semanticHit3": true,
+      "lexicalHit1": false,
+      "lexicalHit3": true,
+      "topSimilarity": 0.5629401811552424,
+      "topCitations": [
+        {
+          "memoryId": "m07",
+          "line": 1,
+          "start": 0,
+          "end": 125,
+          "text": "I remember our first family crossing in the blue boat as 1989, after I finished my apprenticeship. Clara says it was earlier.",
+          "similarity": 0.56294
+        },
+        {
+          "memoryId": "m06",
+          "line": 1,
+          "start": 0,
+          "end": 128,
+          "text": "Our first family crossing in the little blue boat was in 1987. Rui held the rope while I passed the picnic basket over the side.",
+          "similarity": 0.561519
+        },
+        {
+          "memoryId": "m01",
+          "line": 3,
+          "start": 301,
+          "end": 364,
+          "text": "I think this was around 1968. I cannot remember the exact year.",
+          "similarity": 0.382012
+        }
+      ]
+    },
+    {
+      "query": "Keeping an object to remember someone who died",
+      "relevant": [
+        "m08"
+      ],
+      "semanticTop3": [],
+      "lexicalTop3": [
+        "m01",
+        "m03",
+        "m05"
+      ],
+      "semanticHit1": false,
+      "semanticHit3": false,
+      "lexicalHit1": false,
+      "lexicalHit3": false,
+      "topSimilarity": null,
+      "topCitations": []
+    },
+    {
+      "query": "Quem consertava roupas em vez de comprar outras?",
+      "relevant": [
+        "m01"
+      ],
+      "semanticTop3": [
+        "m01"
+      ],
+      "lexicalTop3": [],
+      "semanticHit1": true,
+      "semanticHit3": true,
+      "lexicalHit1": false,
+      "lexicalHit3": false,
+      "topSimilarity": 0.36472665672589744,
+      "topCitations": [
+        {
+          "memoryId": "m01",
+          "line": 2,
+          "start": 164,
+          "end": 300,
+          "text": "She never threw a garment away while the cloth could still hold a needle. I wore that coat until the sleeves stopped reaching my wrists.",
+          "similarity": 0.364727
+        },
+        {
+          "memoryId": "m01",
+          "line": 1,
+          "start": 0,
+          "end": 163,
+          "text": "Grandma Nair kept a tin of buttons under her chair. When the sleeve of my yellow coat tore, she turned the cuff inside out and stitched a patch shaped like a leaf.",
+          "similarity": 0.35698
+        }
+      ]
+    },
+    {
+      "query": "Uma festa durante uma queda de energia",
+      "relevant": [
+        "m03"
+      ],
+      "semanticTop3": [
+        "m03"
+      ],
+      "lexicalTop3": [],
+      "semanticHit1": true,
+      "semanticHit3": true,
+      "lexicalHit1": false,
+      "lexicalHit3": false,
+      "topSimilarity": 0.41509657845154485,
+      "topCitations": [
+        {
+          "memoryId": "m03",
+          "line": 1,
+          "start": 0,
+          "end": 133,
+          "text": "The electricity failed during my birthday supper in 1985. Our neighbours brought candles and we carried the table into the courtyard.",
+          "similarity": 0.415097
+        },
+        {
+          "memoryId": "m03",
+          "line": 2,
+          "start": 134,
+          "end": 267,
+          "text": "Someone beat a spoon against a glass and everybody sang. The cake had collapsed in the oven, so we ate warm batter from little bowls.",
+          "similarity": 0.391802
+        }
+      ]
+    },
+    {
+      "query": "Qual lembrança fala de mudar de cidade?",
+      "relevant": [
+        "m05"
+      ],
+      "semanticTop3": [],
+      "lexicalTop3": [],
+      "semanticHit1": false,
+      "semanticHit3": false,
+      "lexicalHit1": false,
+      "lexicalHit3": false,
+      "topSimilarity": null,
+      "topCitations": []
+    },
+    {
+      "query": "Saudade da avó através de um cheiro",
+      "relevant": [
+        "m08"
+      ],
+      "semanticTop3": [
+        "m08",
+        "m05",
+        "m01"
+      ],
+      "lexicalTop3": [],
+      "semanticHit1": true,
+      "semanticHit3": true,
+      "lexicalHit1": false,
+      "lexicalHit3": false,
+      "topSimilarity": 0.534461802377926,
+      "topCitations": [
+        {
+          "memoryId": "m08",
+          "line": 1,
+          "start": 0,
+          "end": 129,
+          "text": "After Nair died, I found a folded apron in the bottom drawer. It smelled faintly of orange peel and the soap she used on Sundays.",
+          "similarity": 0.534462
+        },
+        {
+          "memoryId": "m05",
+          "line": 1,
+          "start": 0,
+          "end": 141,
+          "text": "We left the small town carrying two suitcases and a basket of oranges. Mum gave the window seat to my sister because she felt sick on trains.",
+          "similarity": 0.394469
+        },
+        {
+          "memoryId": "m01",
+          "line": 1,
+          "start": 0,
+          "end": 163,
+          "text": "Grandma Nair kept a tin of buttons under her chair. When the sleeve of my yellow coat tore, she turned the cuff inside out and stitched a patch shaped like a leaf.",
+          "similarity": 0.342662
+        }
+      ]
+    },
+    {
+      "query": "Um passeio de barco com datas diferentes",
+      "relevant": [
+        "m06",
+        "m07"
+      ],
+      "semanticTop3": [
+        "m06",
+        "m07",
+        "m05"
+      ],
+      "lexicalTop3": [],
+      "semanticHit1": true,
+      "semanticHit3": true,
+      "lexicalHit1": false,
+      "lexicalHit3": false,
+      "topSimilarity": 0.5228928490808373,
+      "topCitations": [
+        {
+          "memoryId": "m06",
+          "line": 1,
+          "start": 0,
+          "end": 128,
+          "text": "Our first family crossing in the little blue boat was in 1987. Rui held the rope while I passed the picnic basket over the side.",
+          "similarity": 0.522893
+        },
+        {
+          "memoryId": "m07",
+          "line": 1,
+          "start": 0,
+          "end": 125,
+          "text": "I remember our first family crossing in the blue boat as 1989, after I finished my apprenticeship. Clara says it was earlier.",
+          "similarity": 0.493634
+        },
+        {
+          "memoryId": "m05",
+          "line": 3,
+          "start": 270,
+          "end": 347,
+          "text": "This was about 1983, perhaps the following year. We were moving to the coast.",
+          "similarity": 0.386489
+        }
+      ]
+    },
+    {
+      "query": "How do I replace the battery in an electric car?",
+      "relevant": [],
+      "semanticTop3": [],
+      "lexicalTop3": [
+        "m04"
+      ],
+      "semanticHit1": false,
+      "semanticHit3": false,
+      "lexicalHit1": false,
+      "lexicalHit3": false,
+      "topSimilarity": null,
+      "topCitations": []
+    },
+    {
+      "query": "Who won the intergalactic chess tournament on Mars?",
+      "relevant": [],
+      "semanticTop3": [
+        "m01"
+      ],
+      "lexicalTop3": [],
+      "semanticHit1": false,
+      "semanticHit3": false,
+      "lexicalHit1": false,
+      "lexicalHit3": false,
+      "topSimilarity": 0.35623930681571003,
+      "topCitations": [
+        {
+          "memoryId": "m01",
+          "line": 3,
+          "start": 301,
+          "end": 364,
+          "text": "I think this was around 1968. I cannot remember the exact year.",
+          "similarity": 0.356239
+        }
+      ]
+    },
+    {
+      "query": "Qual é a fórmula para calcular juros compostos?",
+      "relevant": [],
+      "semanticTop3": [],
+      "lexicalTop3": [],
+      "semanticHit1": false,
+      "semanticHit3": false,
+      "lexicalHit1": false,
+      "lexicalHit3": false,
+      "topSimilarity": null,
+      "topCitations": []
+    }
+  ]
+}

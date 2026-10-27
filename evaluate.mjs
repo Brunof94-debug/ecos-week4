@@ -1,0 +1,24 @@
+import fs from 'node:fs/promises';
+import {pipeline,env} from '@huggingface/transformers';
+import {MODEL,MIN_SIMILARITY} from './model-config.mjs';
+import {SAMPLE,EVALUATION_QUERIES} from './samples.mjs';
+import {chunkMemory,rankChunks,lexicalRank} from './core.mjs';
+env.cacheDir='.runtime/model-cache';
+await fs.mkdir('evidence',{recursive:true});
+const started=Date.now();
+console.log('Loading the pinned open model for an actual retrieval experiment.');
+const pipe=await pipeline('feature-extraction',MODEL.id,{revision:MODEL.revision,dtype:MODEL.dtype,device:'cpu'});
+const chunks=SAMPLE.flatMap(chunkMemory);
+const vectors=(await pipe(chunks.map(c=>c.text),{pooling:'mean',normalize:true})).tolist();
+const outOfScope=['How do I replace the battery in an electric car?','Who won the intergalactic chess tournament on Mars?','Qual é a fórmula para calcular juros compostos?'];
+const queries=[...EVALUATION_QUERIES,...outOfScope.map(query=>({query,relevant:[]}))];
+const qVectors=(await pipe(queries.map(q=>q.query),{pooling:'mean',normalize:true})).tolist();
+const distinct=hits=>[...new Set(hits.map(h=>h.memoryId))];
+const results=queries.map((q,i)=>{
+ const ranked=rankChunks(chunks,vectors,qVectors[i]);const semantic=distinct(ranked);const lexical=distinct(lexicalRank(chunks,q.query));
+ return {...q,semanticTop3:semantic.slice(0,3),lexicalTop3:lexical.slice(0,3),semanticHit1:q.relevant.includes(semantic[0]),semanticHit3:semantic.slice(0,3).some(id=>q.relevant.includes(id)),lexicalHit1:q.relevant.includes(lexical[0]),lexicalHit3:lexical.slice(0,3).some(id=>q.relevant.includes(id)),topSimilarity:ranked[0]?.similarity??null,topCitations:ranked.slice(0,3).map(c=>({memoryId:c.memoryId,line:c.line,start:c.start,end:c.end,text:c.text,similarity:Number(c.similarity.toFixed(6))}))};
+});
+const expected=results.filter(q=>q.relevant.length);
+const evidence={runAt:new Date().toISOString(),model:MODEL,runtime:'Node.js ONNX Runtime CPU; browser WASM checked separately',memoryCount:SAMPLE.length,passageCount:chunks.length,threshold:MIN_SIMILARITY,elapsedMs:Date.now()-started,method:'Twelve authored EN/PT queries against eight authored fictional memories. Body-only embeddings; expected labels never enter model input. Stopword-filtered exact-token overlap baseline. Hit@3 counts at least one expected memory among distinct retrieved IDs. These queries are illustrative, not held-out or representative.',summary:{queries:expected.length,semanticHit1:expected.filter(q=>q.semanticHit1).length,semanticHit3:expected.filter(q=>q.semanticHit3).length,lexicalHit1:expected.filter(q=>q.lexicalHit1).length,lexicalHit3:expected.filter(q=>q.lexicalHit3).length,outOfScopeAbstentions:results.filter(q=>!q.relevant.length&&!q.semanticTop3.length).length,outOfScopeQueries:outOfScope.length},results};
+await fs.writeFile('evidence/retrieval-evaluation.json',JSON.stringify(evidence,null,2));
+console.log(JSON.stringify(evidence.summary,null,2));
