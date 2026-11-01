@@ -27,3 +27,12 @@ A complete draft was prepared under DEV account `brunof94_debug` (temporary draf
 ## Limitations
 
 No claim of real-user testing, historical accuracy, private-story security audit, representative retrieval quality or universal browser/device compatibility. App and model caches are separate; offline operation is conditional on cache retention.
+
+## Maintenance verification — 2026-10-31
+
+- Added two-space formatting for all authored HTML, JavaScript, CSS, SVG and JSON/YAML configuration, including HTML templates inside the browser code. Prettier is pinned to 3.9.10, and the publishing workflow now checks formatting. Editor and Git settings keep source indentation and line endings consistent.
+- Moved the offline worker body out of the build script's long string into `service-worker.mjs`. The generated worker was compared with the original after normalizing formatting and the content-derived cache version; the code matched.
+- `npm run format:check`, all eight existing deterministic tests, and `npm run build` passed. The build still produces sixteen manifest-listed assets. Twelve other existing source files matched the original after canonical formatting.
+- Updated only the Node-side transitive `sharp` dependency to 0.35.5 through a scoped override. `npm audit --omit=dev` reported zero vulnerabilities. Transformers.js 3.8.1, the model revision and the browser vendor bundle remain pinned.
+- Repeated the actual CPU retrieval experiment with the updated dependency tree. All fifteen query results matched the original semantic/lexical rankings, hit flags and exact source citations. The twelve related queries still yield 10/12 semantic rank-one hits. This repeats the same authored exercise; it does not provide new held-out evidence. The new run is kept separately in ignored `.runtime/code-organization-2026-10-31/`; `evidence/retrieval-evaluation.json` was not overwritten.
+- Checked the rebuilt app in an isolated local browser origin: eight fictional memories, preserved year disagreement, original source text and the birthday passage at line 1 / UTF-16 0–133, shelf pinning, English/Portuguese interface switching and successful app-cache installation. The local browser check did not repeat the WASM model download or test a disconnected network.

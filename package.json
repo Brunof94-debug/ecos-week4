@@ -7,7 +7,22 @@
     "build": "node build.mjs",
     "start": "node server.mjs",
     "test": "node --test tests.mjs",
-    "evaluate": "node evaluate.mjs"
+    "evaluate": "node evaluate.mjs",
+    "format": "prettier --write \"**/*.{html,mjs,css,svg,json,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{html,mjs,css,svg,json,yml,yaml}\""
   },
-  "dependencies": { "@huggingface/transformers": "3.8.1" }
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "3.8.1"
+  },
+  "devDependencies": {
+    "prettier": "3.9.10"
+  },
+  "overrides": {
+    "@huggingface/transformers": {
+      "sharp": "0.35.5"
+    }
+  }
 }
